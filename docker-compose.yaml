@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: board-db
+    image: postgres:14.0
+    volumes:
+      - board:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: qwer1234
+      POSTGRES_USER: qwer
+      POSTGRES_DATABASE: qwer
+    ports:
+      - "5432:5432"
+
+volumes:
+  board:
